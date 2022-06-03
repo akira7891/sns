@@ -10,7 +10,9 @@
 <body>
     <h1>つぶやきアプリ</h1>
     <div>
-{{$name}}
+    @foreach($tweets as $tweet)
+        <p>つぶやき{{ $tweet->content }}　投稿日時{{ $tweet->created_at }}　更新日時{{ $tweet->updated_at }}</p>
+    @endforeach
     </div>
 </body>
 </html>
