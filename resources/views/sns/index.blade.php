@@ -9,10 +9,22 @@
 </head>
 <body>
     <h1>つぶやきアプリ</h1>
-    <div>
-    @foreach($tweets as $tweet)
-        <p>つぶやき{{ $tweet->content }}　投稿日時{{ $tweet->created_at }}　更新日時{{ $tweet->updated_at }}</p>
-    @endforeach
-    </div>
+    <h2>投稿フォーム</h2>
+        <form action="/create" method="post">
+            @csrf
+            <label for="tweet-content">つぶやき</label>
+            <span>140文字まで</span>
+            <textarea id="tweet-content" type="text" name="tweet" placeholder="つぶやきを入力"></textarea>
+            @error('tweet')
+            <p style="color: red;">内容が入力されていません</p>
+            @enderror
+            <button type="submit">投稿</button>
+        </form>
+    <h2>投稿一覧</h2>
+        <div>
+        @foreach($tweets as $tweet)
+            <p>{{ $tweet->content }}　{{ $tweet->created_at }}　{{ $tweet->updated_at }}</p>
+        @endforeach
+        </div>
 </body>
 </html>

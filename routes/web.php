@@ -13,4 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',App\Http\Controllers\sns\Indexcontroller::class);
+Route::get('/',App\Http\Controllers\sns\IndexController::class);
+
+Route::post('/create',App\Http\Controllers\sns\CreateController::class);
