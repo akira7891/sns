@@ -23,7 +23,7 @@
     <h2>投稿一覧</h2>
         <div>
         @foreach($tweets as $tweet)
-            <p>{{ $tweet->content }}　{{ $tweet->created_at }}　{{ $tweet->updated_at }}</p>
+            <p>{{ $tweet->id }}　{{ $tweet->content }}　{{ $tweet->created_at }}　{{ $tweet->updated_at }}</p>
         @endforeach
         </div>
 </body>

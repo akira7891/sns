@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',App\Http\Controllers\sns\IndexController::class);
 
 Route::post('/create',App\Http\Controllers\sns\CreateController::class);
+
+Route::get('/update/{tweetId}',App\Http\Controllers\sns\update\IndexController::class)->name("update.index");
+
+Route::post('/update/{tweetId}',App\Http\Controllers\sns\update\PutController::class);
