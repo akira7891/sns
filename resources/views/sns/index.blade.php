@@ -22,9 +22,12 @@
         </form>
     <h2>投稿一覧</h2>
         <div>
+        @if(session('feedback.success'))
+        <p style="color: green">{{session('feedback.success')}}</p>
+        @endif
         @foreach($tweets as $tweet)
             <details>
-            <summary>{{ $tweet->id }}　{{ $tweet->content }}　{{ $tweet->created_at }}　{{ $tweet->updated_at }}　<a href="{{route('update.index',['tweetId'=>$tweet->id])}}">編集</a></summary>
+            <summary>{{ $tweet->id }}　{{ $tweet->content }}　{{ $tweet->created_at }}　{{ $tweet->updated_at }}　<a href="{{route('update.index',['tweetId'=>$tweet->id])}}">編集</a>　<a href="{{route('delete',['tweetId'=>$tweet->id])}}">削除</a></summary>
             </details>
         @endforeach
         </div>
