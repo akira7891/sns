@@ -23,7 +23,9 @@
     <h2>投稿一覧</h2>
         <div>
         @foreach($tweets as $tweet)
-            <p>{{ $tweet->id }}　{{ $tweet->content }}　{{ $tweet->created_at }}　{{ $tweet->updated_at }}</p>
+            <details>
+            <summary>{{ $tweet->id }}　{{ $tweet->content }}　{{ $tweet->created_at }}　{{ $tweet->updated_at }}　<a href="{{route('update.index',['tweetId'=>$tweet->id])}}">編集</a></summary>
+            </details>
         @endforeach
         </div>
 </body>
