@@ -10,7 +10,7 @@
 <body>
 <h1>つぶやきを編集する</h1>
 <div>
-    <a href="/">< 戻る</a>
+    <a href="/tweet">< 戻る</a>
     <p>投稿フォーム</p>
     <form action="/update/{{$tweetId}}" method="post">
         @if (session('feedback.success'))
